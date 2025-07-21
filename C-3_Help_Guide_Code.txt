@@ -1,0 +1,293 @@
+
+choice=1
+while [ $choice -ne 7 ]
+do
+ echo "=============== Linux Help Guide ==============="
+ echo "1. General Purpose Commands"
+ echo "2. Basic Commands"
+ echo "3. File Manipulation Commands"
+ echo "4. Directory Manipulation Commands"
+ echo "5. Process Commands"
+ echo "6. Text Processing Commands"
+ echo "7. Exit"
+ echo "==============================================="
+ read -p "Enter your choice [1-7]: " choice
+ 
+ case $choice in
+ 1) # General Purpose Commands
+  
+  echo "General Purpose Commands:"
+  echo "1. tty"
+  echo "2. cal"
+  echo "3. clear"
+  echo "4. date"
+  read -p "Enter command number [1-4]: " cmd
+  case $cmd in
+   1)
+    echo "Command: tty"
+    echo "Usage: tty"
+    echo "Description: Prints the terminal number with the detailed path of the terminal file."
+    echo "Example: "
+    echo "  $ tty"
+    echo "  /dev/pts/1"
+    ;;
+   2)
+    echo "Command: cal"
+    echo "Usage: cal [options]"
+    echo "Description: Displays a formatted calendar."
+    echo "Options:"
+    echo "  -m mm yyyy   : Display calendar for a specific month (mm) and year (yyyy)."
+    echo "  yyyy -3      : Display calendars for the specified year and the previous two years."
+    echo "Example: "
+    echo "  $ cal -m 10 2024"
+    echo "  October 2023"
+    ;;
+   3)
+    echo "Command: clear"
+    echo "Usage: clear"
+    echo "Description: Clears the terminal screen."
+    echo "Example:"
+    echo "  $ clear"
+    ;;
+   4)
+    echo "Command: date"
+    echo "Usage: date [options]"
+    echo "Options:"
+    echo "  +FORMAT      : Output the date in a specific format using format specifiers."
+    echo "                 Examples:"
+    echo "                   %d : Day of the month (01..31)"
+    echo "                   %m : Month (01..12)"
+    echo "                   %Y : Year in full (e.g., 2023)"
+    echo "Example:"
+    echo "  $ date +\"%d-%m-%Y\""
+    echo "  10-10-2023"
+    ;;
+   *) echo "Invalid option."; ;;
+  esac
+  ;;
+  
+ 2) # Basic Commands
+  
+  echo "Basic Commands:"
+  echo "1. who"
+  echo "2. whoami"
+  echo "3. pwd"
+  echo "4. passwd"
+  read -p "Enter command number [1-4]: " cmd
+  case $cmd in
+   1)
+    echo "Command: who"
+    echo "Usage: who [options]"
+    echo "Description: Displays information about the users currently logged in."
+    echo "Options:"
+    echo "  -u    : Display user information along with idle time."
+    echo "Example:"
+    echo "  $ who"
+    echo "  user1   pts/1  2023-10-10 10:20 (:0)"
+    ;;
+   2)
+    echo "Command: whoami"
+    echo "Usage: whoami"
+    echo "Description: Prints the current logged-in user's name."
+    echo "Example:"
+    echo "  $ whoami"
+    echo "  user1"
+    ;;
+   3)
+    echo "Command: pwd"
+    echo "Usage: pwd"
+    echo "Description: Prints the current working directory."
+    echo "Example:"
+    echo "  $ pwd"
+    echo "  /home/user1/projects"
+    ;;
+   4)
+    echo "Command: passwd"
+    echo "Usage: passwd [username]"
+    echo "Description: Changes the user's password. If no username is provided, it changes the password for the current user."
+    echo "Example:"
+    echo "  $ passwd"
+    echo "  Changing password for user1."
+    ;;
+   *) echo "Invalid option."; ;;
+  esac
+  ;;
+
+ 3) # File Manipulation Commands
+  
+  echo "File Manipulation Commands:"
+  echo "1. cp"
+  echo "2. mv"
+  echo "3. rm"
+  read -p "Enter command number [1-3]: " cmd
+  case $cmd in
+   1)
+    echo "Command: cp"
+    echo "Usage: cp [options] source destination"
+    echo "Description: Copies files and directories."
+    echo "Options:"
+    echo "  -r    : Copy directories recursively."
+    echo "  -v    : Verbose mode. Displays the files being copied."
+    echo "Example:"
+    echo "  $ cp -r source_dir/ target_dir/"
+    ;;
+   2)
+    echo "Command: mv"
+    echo "Usage: mv [options] source destination"
+    echo "Description: Moves files or directories to a new location."
+    echo "Options:"
+    echo "  -v    : Verbose mode. Displays the files being moved."
+    echo "Example:"
+    echo "  $ mv file1.txt backup/"
+    ;;
+   3)
+    echo "Command: rm"
+    echo "Usage: rm [options] file"
+    echo "Description: Removes files or directories."
+    echo "Options:"
+    echo "  -r    : Recursively delete directories and their contents."
+    echo "  -f    : Force deletion without prompts."
+    echo "Example:"
+    echo "  $ rm -rf old_directory/"
+    ;;
+   *) echo "Invalid option."; ;;
+  esac
+  ;;
+
+ 4) # Directory Manipulation Commands
+  
+  echo "Directory Manipulation Commands:"
+  echo "1. mkdir"
+  echo "2. rmdir"
+  echo "3. cd"
+  echo "4. dir"
+  echo "5. chmod"
+  read -p "Enter command number [1-5]: " cmd
+  case $cmd in
+   1) echo "Command: mkdir"
+    echo "Usage: mkdir [options] directory"
+    echo "Description: Creates directories."
+    echo "Options:"
+    echo "  -p    : Create parent directories as needed."
+    echo "Example:"
+    echo "  $ mkdir -p new_directory/sub_directory/"
+    ;;
+   2) echo "Command: rmdir"
+    echo "Usage: rmdir [directory]"
+    echo "Description: Removes an empty directory."
+    echo "Example:"
+    echo "  $ rmdir empty_directory"
+    ;;
+   3) echo "Command: cd"
+    echo "Usage: cd [directory]"
+    echo "Description: Changes the current directory to the specified      directory."
+    echo "Example:"
+    echo "  $ cd /home/user1/projects"
+    ;;
+   4)  echo "Command: dir"
+    echo "Usage: dir"
+    echo "Description: Lists the contents of a directory."
+    echo "Example:"
+    echo "  $ dir"
+    ;;
+   5) echo "Command: chmod"
+    echo "Usage: chmod [options] mode file"
+    echo "Description: Changes the file permissions."
+    echo "Example:"
+    echo "  $ chmod 755 script.sh"
+    ;;
+  *) echo "Invalid option."; ;;
+  esac
+  ;;
+
+ 5) # Process Commands
+  
+  echo "Process Commands:"
+  echo "1. ps"
+  echo "2. kill"
+  echo "3. sleep"
+  read -p "Enter command number [1-3]: " cmd
+  case $cmd in
+   1) echo "Command: ps"
+    echo "Usage: ps [options]"
+    echo "Description: Displays information about active processes."
+    echo "Options:"
+    echo "  -e    : Show all processes."
+    echo "  -u [user] : Display processes for the specified user."
+    echo "Example:"
+    echo "  $ ps -e"
+    echo "  PID TTY          TIME CMD"
+    ;;
+   2)  echo "Command: kill"
+    echo "Usage: kill [options] PID"
+    echo "Description: Sends a signal to a process to terminate it."
+    echo "Options:"
+    echo "  -9    : Force kill the process immediately."
+    echo "Example:"
+    echo "  $ kill -9 1234"
+    echo "  (This command kills the process with PID 1234)"
+    ;;
+   3)  echo "Command: sleep"
+    echo "Usage: sleep [time]"
+    echo "Description: Delays the execution of the next command for a specified amount of time."
+    echo "Example:"
+    echo "  $ sleep 5"
+    echo "  (This command pauses for 5 seconds before proceeding)"
+    ;;
+   *) echo "Invalid option."; ;;
+  esac
+  ;;
+  
+6) # Text Processing Commands
+  
+  echo "Text Processing Commands:"
+  echo "1. grep"
+  echo "2. tr"
+  echo "3. wc"
+  read -p "Enter command number [1-3]: " cmd
+  case $cmd in
+  1)
+    echo "Command: grep"
+    echo "Usage: grep [options] pattern [file]"
+    echo "Description: Searches for patterns within files. Prints lines matching the given pattern."
+    echo "Options:"
+    echo "  -i    : Ignore case distinctions in patterns and input files."
+    echo "  -v    : Invert match. Display lines that do not match the pattern."
+    echo "  -r    : Search directories recursively."
+    echo "Example:"
+    echo "  $ grep 'hello' file.txt"
+    echo "  (Searches for the word 'hello' in the file.txt)"
+    ;;
+   2)
+    echo "Command: tr"
+    echo "Usage: tr [options] set1 set2"
+    echo "Description: Translates or deletes characters from the input."
+    echo "Options:"
+    echo "  -d    : Delete characters from the input."
+    echo "  -s    : Squeeze repeated characters into a single character."
+    echo "Example:"
+    echo "  $ echo 'hello 123' | tr 'a-z' 'A-Z'"
+    echo "  (Converts all lowercase characters to uppercase)"
+    ;;
+   3)
+    echo "Command: wc"
+    echo "Usage: wc [options] [file]"
+    echo "Description: Counts the number of lines, words, and characters in a file."
+    echo "Options:"
+    echo "  -l    : Print the number of lines."
+    echo "  -w    : Print the number of words."
+    echo "  -c    : Print the number of characters."
+    echo "Example:"
+    echo "  $ wc -l file.txt"
+    echo "  (Counts the number of lines in file.txt)"
+    ;;
+   *) echo "Invalid option."; ;;
+  esac
+  ;;
+
+7) exit 0 ;;
+*) echo "Incorrect choice.....";;
+esac
+
+read -p "Press any key to continue...."
+done
